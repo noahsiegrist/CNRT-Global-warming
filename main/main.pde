@@ -101,54 +101,41 @@ void drawChart(){
   
 }
 
+
 float getScaledTemp(int y, int m) {
-  return screenHeight-50-(temprature[y][m]-minTemp)*scale;
+  return getTempToScreen(temprature[y][m]);
 }
 
-void draw_temperaturebar(){
-  fill(#f10101);
-  stroke(#fb0000);
-  rect(1350,220,30,20);
+float getTempToScreen(float temp){
+  return screenHeight-50-(temp-minTemp)*scale;
+}
+
+void draw_temperaturebar(){  
+  int x = 1350;
+  int y = 50;
+  int h = screenHeight-100;
+  int w = 30;
+  color c1 = color(255, 0, 0);
+  color c2 = color(0, 0, 255);
+ 
+  for (int i = y; i <= y+h; i++) {
+      float inter = map(i, y, y+h, 0, 1);
+      color c = lerpColor(c1, c2, inter);
+      stroke(c);
+      line(x, i, x+w, i);
+    }
+}
+
+color getColorPerTemp(float temp){
   
-  fill(#fe8e2a);
-  stroke(#fc9b10);
-  rect(1350,240,30,20);
-  
-  fill(#fef610);
-  stroke(#fef610);
-  rect(1350,260,30,20);
-  
-  fill(#df31f9);
-    stroke(#df31f9);
-  rect(1350,280,30,20);
-  
-   fill(#0076ee);
-     stroke(#0076ee);
-  rect(1350,300,30,20);
-  
-   fill(#46c0ff);
-     stroke(#0076ee);
-  rect(1350,320,30,20);
-  
-   fill(#a0f5ff);
-     stroke(#0076ee);
-  rect(1350,340,30,20);
-  
-   fill(#add7fe);
-     stroke(#0076ee);
-  rect(1350,360,30,20);
 }
 
 void draw_temperaturebar_skala(){
   textSize(18);
   fill(#000000);
-  text("C°",1390,216);
-  text("30 - 35",1390,236);
-  text("30 - 35",1390,256);
-  text("30 - 35",1390,276);
-  text("30 - 35",1390,296);
-  text("30 - 35",1390,316);
-  text("30 - 35",1390,336);
-  text("30 - 35",1390,356);
-  text("30 - 35",1390,376);
+  text("C°",1390,30);
+  text(maxTemp,1390,getTempToScreen(maxTemp));
+  text("0",1390,getTempToScreen(0));
+  text(minTemp,1390,getTempToScreen(minTemp));
+  
 }
