@@ -1,6 +1,8 @@
 Table table;
 
 void setup() {
+  size(1200, 800);
+  
   table = loadTable("data/zuerich.csv");
 
   println(table.getRowCount() + " total rows in table");
