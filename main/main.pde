@@ -11,6 +11,7 @@ float minTemp = 999;
 
 void setup() {
   size(1500, 800);
+  frameRate(20);
   
   table = loadTable("data/zuerich.csv", "header");
   println(table.getRowCount() + " total rows in table");
@@ -79,15 +80,25 @@ void draw() {
   draw_temperaturebar();
   draw_temperaturebar_skala();
   
-  println(scale);
+  drawChart();
+  
+}
+
+void drawChart(){
+  int y = 0;
   for(int i = 0; temprature.length > i; i++) {
     for(int j = 0; 11 > j; j++){
-      if(temprature[i][j] != 0 && temprature[i][j+1] != 0){
-        line(j*100+100, getScaledTemp(i, j), j*100+200, getScaledTemp(i, j+1));
+      
+      line(j*100+100, getScaledTemp(i, j), j*100+200, getScaledTemp(i, j+1));
+      y++;
+      if(step < y){
+        step++;
+        text(firstYear+i,10,10);
+        return;
       }
     }
   }
-
+  
 }
 
 float getScaledTemp(int y, int m) {
