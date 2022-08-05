@@ -97,13 +97,32 @@ void draw_temperaturebar(){
   fill(#f10101);
   stroke(#fb0000);
   rect(1350,220,30,20);
+  
   fill(#fe8e2a);
   stroke(#fc9b10);
   rect(1350,240,30,20);
-<<<<<<< HEAD
-  fill(#eeda00);
+  
+  fill(#fef610);
+  stroke(#fef610);
   rect(1350,260,30,20);
-  stroke(#ce8e2a);
-=======
->>>>>>> 34df1a0b4fc1158b3bba885fada9f0e043568bb6
+  
+  fill(#df31f9);
+    stroke(#df31f9);
+  rect(1350,280,30,20);
+  
+   fill(#0076ee);
+     stroke(#0076ee);
+  rect(1350,300,30,20);
+  
+   fill(#46c0ff);
+     stroke(#0076ee);
+  rect(1350,320,30,20);
+  
+   fill(#a0f5ff);
+     stroke(#0076ee);
+  rect(1350,340,30,20);
+  
+   fill(#add7fe);
+     stroke(#0076ee);
+  rect(1350,360,30,20);
 }
