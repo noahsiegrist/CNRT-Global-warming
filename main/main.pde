@@ -64,18 +64,18 @@ void draw() {
   line(1100,0,1100,800);
   line(1200,0,1200,800);
 
-  text("Jan",105,10);
-  text("Feb",205,10);
-  text("Mar",305,10);
-  text("Apr",405,10);
-  text("Mai",505,10);
-  text("Jun",605,10);
-  text("Jul",705,10);
-  text("Aug",805,10);
-  text("Sep",905,10);
-  text("Okt",1005,10);
-  text("Nov",1105,10);
-  text("Dez",1205,10);
+  text("Jan",105,20);
+  text("Feb",205,20);
+  text("Mar",305,20);
+  text("Apr",405,20);
+  text("Mai",505,20);
+  text("Jun",605,20);
+  text("Jul",705,20);
+  text("Aug",805,20);
+  text("Sep",905,20);
+  text("Okt",1005,20);
+  text("Nov",1105,20);
+  text("Dez",1205,20);
   
   draw_temperaturebar();
   draw_temperaturebar_skala();
@@ -93,7 +93,7 @@ void drawChart(){
       y++;
       if(step < y){
         step++;
-        text(firstYear+i,10,10);
+        text(firstYear+i,10,20);
         return;
       }
     }
@@ -133,9 +133,21 @@ color getColorPerTemp(float temp){
 void draw_temperaturebar_skala(){
   textSize(18);
   fill(#000000);
+<<<<<<< HEAD
   text("C°",1390,30);
   text(maxTemp,1390,getTempToScreen(maxTemp));
   text("0",1390,getTempToScreen(0));
   text(minTemp,1390,getTempToScreen(minTemp));
   
+=======
+  text("C°",1390,216);
+  text("< 15",1390,236);
+  text("11 bis 15",1390,256);
+  text("6 bis 10",1390,276);
+  text("1 bis 5",1390,296);
+  text("-6 bis 0",1390,316);
+  text("-9 bis -5",1390,336);
+  text("-15 bis -10",1390,356);
+  text("> -15",1390,376);
+>>>>>>> 29bfac3653801c175a556624f1b73fd4b0e6a8c1
 }
