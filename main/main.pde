@@ -130,6 +130,8 @@ void draw_temperaturebar(){
 
 void draw_temperaturebar_skala(){
   textSize(18);
+  fill(#000000);
+  text("C°",1390,216);
   text("30 - 35",1390,236);
   text("30 - 35",1390,256);
   text("30 - 35",1390,276);
@@ -137,4 +139,5 @@ void draw_temperaturebar_skala(){
   text("30 - 35",1390,316);
   text("30 - 35",1390,336);
   text("30 - 35",1390,356);
+  text("30 - 35",1390,376);
 }
