@@ -95,12 +95,18 @@ float getScaledTemp(int y, int m) {
 }
 
 void draw_temperaturebar(){
-  fill(#b43b3b);
-  stroke(#b43b3b);
+  fill(#f10101);
+  stroke(#fb0000);
   rect(1350,220,30,20);
-  fill(#ce8e2a);
-  stroke(#ce8e2a);
+  fill(#fe8e2a);
+  stroke(#fc9b10);
   rect(1350,240,30,20);
+<<<<<<< HEAD
+  fill(#eeda00);
+  rect(1350,260,30,20);
+  stroke(#ce8e2a);
+=======
+>>>>>>> 34df1a0b4fc1158b3bba885fada9f0e043568bb6
 }
 
 void draw_temperaturebar_skala(){
