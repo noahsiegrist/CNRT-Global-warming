@@ -59,6 +59,7 @@ void draw() {
   text("Nov",1105,30);
   text("Dez",1205,30);
   draw_temperaturebar();
+  draw_temperaturebar_skala();
 }
 
 void draw_temperaturebar(){
@@ -69,4 +70,15 @@ void draw_temperaturebar(){
   stroke(#ce8e2a);
   rect(1350,240,30,20);
   
+}
+
+void draw_temperaturebar_skala(){
+  textSize(18);
+  text("30 - 35",1390,236);
+  text("30 - 35",1390,256);
+  text("30 - 35",1390,276);
+  text("30 - 35",1390,296);
+  text("30 - 35",1390,316);
+  text("30 - 35",1390,336);
+  text("30 - 35",1390,356);
 }
