@@ -10,7 +10,7 @@ float maxTemp = -999;
 float minTemp = 999;
 
 void setup() {
-  size(1300, 800);
+  size(1500, 800);
   
   table = loadTable("data/zuerich.csv", "header");
   println(table.getRowCount() + " total rows in table");
@@ -47,7 +47,8 @@ void setup() {
 
 void draw() {
   background(#FFFFFF);
-  fill(255,0,0);
+  fill(#000000);
+  textSize(24);
   stroke(#000000);
   line(100,0,100,800);
   line(200,0,200,800);
@@ -61,6 +62,7 @@ void draw() {
   line(1000,0,1000,800);
   line(1100,0,1100,800);
   line(1200,0,1200,800);
+
   text("Jan",105,10);
   text("Feb",205,10);
   text("Mar",305,10);
@@ -74,6 +76,7 @@ void draw() {
   text("Nov",1105,10);
   text("Dez",1205,10);
   
+  draw_temperaturebar();
   
   println(scale);
   for(int i = 0; temprature.length > i; i++) {
@@ -88,4 +91,13 @@ void draw() {
 
 float getScaledTemp(int y, int m) {
   return screenHeight-50-(temprature[y][m]-minTemp)*scale;
+}
+
+void draw_temperaturebar(){
+  fill(#b43b3b);
+  stroke(#b43b3b);
+  rect(1350,220,30,20);
+  fill(#ce8e2a);
+  stroke(#ce8e2a);
+  rect(1350,240,30,20);
 }
