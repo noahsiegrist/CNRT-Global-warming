@@ -58,10 +58,15 @@ void draw() {
   text("Okt",1005,30);
   text("Nov",1105,30);
   text("Dez",1205,30);
-  draw_rect();
+  draw_temperaturebar();
 }
 
-void draw_rect(){
-  rect(1350,220,30,20);
+void draw_temperaturebar(){
   fill(#b43b3b);
+  stroke(#b43b3b);
+  rect(1350,220,30,20);
+  fill(#ce8e2a);
+  stroke(#ce8e2a);
+  rect(1350,240,30,20);
+  
 }
