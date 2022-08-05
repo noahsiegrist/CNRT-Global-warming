@@ -64,18 +64,18 @@ void draw() {
   line(1100,0,1100,800);
   line(1200,0,1200,800);
 
-  text("Jan",105,10);
-  text("Feb",205,10);
-  text("Mar",305,10);
-  text("Apr",405,10);
-  text("Mai",505,10);
-  text("Jun",605,10);
-  text("Jul",705,10);
-  text("Aug",805,10);
-  text("Sep",905,10);
-  text("Okt",1005,10);
-  text("Nov",1105,10);
-  text("Dez",1205,10);
+  text("Jan",105,20);
+  text("Feb",205,20);
+  text("Mar",305,20);
+  text("Apr",405,20);
+  text("Mai",505,20);
+  text("Jun",605,20);
+  text("Jul",705,20);
+  text("Aug",805,20);
+  text("Sep",905,20);
+  text("Okt",1005,20);
+  text("Nov",1105,20);
+  text("Dez",1205,20);
   
   draw_temperaturebar();
   draw_temperaturebar_skala();
@@ -93,7 +93,7 @@ void drawChart(){
       y++;
       if(step < y){
         step++;
-        text(firstYear+i,10,10);
+        text(firstYear+i,10,20);
         return;
       }
     }
