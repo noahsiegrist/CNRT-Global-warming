@@ -14,8 +14,8 @@ float minTemp = 999;
 float maxTempY = -999;
 float minTempY = 999;
 
-color c1 = color(255, 0, 0);
-color c2 = color(0, 0, 255);
+color c1 = color(200, 21, 30);
+color c2 = color(0, 150, 255);
 
 void setup() {
   size(1500, 800);
