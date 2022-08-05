@@ -78,6 +78,7 @@ void draw() {
   text("Dez",1205,10);
   
   draw_temperaturebar();
+  draw_temperaturebar_skala();
   
   drawChart();
   
@@ -105,10 +106,49 @@ float getScaledTemp(int y, int m) {
 }
 
 void draw_temperaturebar(){
-  fill(#b43b3b);
-  stroke(#b43b3b);
+  fill(#f10101);
+  stroke(#fb0000);
   rect(1350,220,30,20);
-  fill(#ce8e2a);
-  stroke(#ce8e2a);
+  
+  fill(#fe8e2a);
+  stroke(#fc9b10);
   rect(1350,240,30,20);
+  
+  fill(#fef610);
+  stroke(#fef610);
+  rect(1350,260,30,20);
+  
+  fill(#df31f9);
+    stroke(#df31f9);
+  rect(1350,280,30,20);
+  
+   fill(#0076ee);
+     stroke(#0076ee);
+  rect(1350,300,30,20);
+  
+   fill(#46c0ff);
+     stroke(#0076ee);
+  rect(1350,320,30,20);
+  
+   fill(#a0f5ff);
+     stroke(#0076ee);
+  rect(1350,340,30,20);
+  
+   fill(#add7fe);
+     stroke(#0076ee);
+  rect(1350,360,30,20);
+}
+
+void draw_temperaturebar_skala(){
+  textSize(18);
+  fill(#000000);
+  text("C°",1390,216);
+  text("30 - 35",1390,236);
+  text("30 - 35",1390,256);
+  text("30 - 35",1390,276);
+  text("30 - 35",1390,296);
+  text("30 - 35",1390,316);
+  text("30 - 35",1390,336);
+  text("30 - 35",1390,356);
+  text("30 - 35",1390,376);
 }
