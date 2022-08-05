@@ -174,7 +174,7 @@ color getColorPerTemp(float temp){
 void draw_temperaturebar_skala(){
   textSize(18);
   fill(#000000);
-  text("C°",1390,30);
+  text("Jahresdurchschnitt in C°",1300,30);
   text(maxTemp,1390,getTempYToScreen(maxTempY));
   text("0",1390,getTempYToScreen(0));
   text(minTemp,1390,getTempYToScreen(minTempY));
