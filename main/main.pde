@@ -4,7 +4,7 @@ Float[][] temprature;
 int firstYear;
 
 void setup() {
-  size(1300, 800);
+  size(1500, 800);
   
   table = loadTable("data/zuerich.csv", "header");
   println(table.getRowCount() + " total rows in table");
@@ -31,7 +31,8 @@ void setup() {
 
 void draw() {
   background(#FFFFFF);
-  fill(255,0,0);
+  fill(#000000);
+  textSize(24);
   stroke(#000000);
   line(100,0,100,800);
   line(200,0,200,800);
@@ -45,16 +46,22 @@ void draw() {
   line(1000,0,1000,800);
   line(1100,0,1100,800);
   line(1200,0,1200,800);
-  text("Jan",105,10);
-  text("Feb",205,10);
-  text("Mar",305,10);
-  text("Apr",405,10);
-  text("Mai",505,10);
-  text("Jun",605,10);
-  text("Jul",705,10);
-  text("Aug",805,10);
-  text("Sep",905,10);
-  text("Okt",1005,10);
-  text("Nov",1105,10);
-  text("Dez",1205,10);
+  text("Jan",105,30);
+  text("Feb",205,30);
+  text("Mar",305,30);
+  text("Apr",405,30);
+  text("Mai",505,30);
+  text("Jun",605,30);
+  text("Jul",705,30);
+  text("Aug",805,30);
+  text("Sep",905,30);
+  text("Okt",1005,30);
+  text("Nov",1105,30);
+  text("Dez",1205,30);
+  draw_rect();
+}
+
+void draw_rect(){
+  rect(1350,220,30,20);
+  fill(#b43b3b);
 }
