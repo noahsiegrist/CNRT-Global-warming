@@ -77,6 +77,7 @@ void draw() {
   text("Dez",1205,10);
   
   draw_temperaturebar();
+  draw_temperaturebar_skala();
   
   println(scale);
   for(int i = 0; temprature.length > i; i++) {
@@ -125,4 +126,15 @@ void draw_temperaturebar(){
    fill(#add7fe);
      stroke(#0076ee);
   rect(1350,360,30,20);
+}
+
+void draw_temperaturebar_skala(){
+  textSize(18);
+  text("30 - 35",1390,236);
+  text("30 - 35",1390,256);
+  text("30 - 35",1390,276);
+  text("30 - 35",1390,296);
+  text("30 - 35",1390,316);
+  text("30 - 35",1390,336);
+  text("30 - 35",1390,356);
 }
