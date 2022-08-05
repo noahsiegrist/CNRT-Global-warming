@@ -1,20 +1,25 @@
 Table table;
 
+float[] aveYearly;
 float[][] temprature;
 int firstYear = 0;
 int step = 0;
 
 int screenWidth = 1300, screenHeight=800;
 float scale;
+float scaleY;
 float maxTemp = -999;
 float minTemp = 999;
+
+float maxTempY = -999;
+float minTempY = 999;
 
 color c1 = color(255, 0, 0);
 color c2 = color(0, 0, 255);
 
 void setup() {
   size(1500, 800);
-  frameRate(20);
+  frameRate(60);
   
   table = loadTable("data/zuerich.csv", "header");
   println(table.getRowCount() + " total rows in table");
@@ -41,7 +46,22 @@ void setup() {
     if(minTemp > temp) {
       minTemp = temp;
     }
+   
   }
+  aveYearly = new float[table.getRowCount()/12+1];
+  
+  for(int i = 0; temprature.length > i; i++) {
+    aveYearly[i] = getAverage(temprature[i]);
+    if(maxTempY < aveYearly[i]) {
+      maxTempY = aveYearly[i];
+    }
+    if(minTempY > aveYearly[i]) {
+      minTempY = aveYearly[i];
+    }
+  }
+  
+  float tempRangeY = maxTempY-minTempY;
+  scaleY = (screenHeight-100)/tempRangeY;
   
   float tempRange = maxTemp-minTemp;
   scale = (screenHeight-100)/tempRange;
@@ -90,8 +110,9 @@ void draw() {
 void drawChart(){
   int y = 0;
   for(int i = 0; temprature.length > i; i++) {
+    stroke(getColorPerTemp(aveYearly[i]));
     for(int j = 0; 11 > j; j++){
-      stroke(getColorPerTemp(temprature[i][j]));
+      
       line(j*100+100, getScaledTemp(i, j), j*100+200, getScaledTemp(i, j+1));
       y++;
       if(step < y){
@@ -104,6 +125,13 @@ void drawChart(){
   
 }
 
+float getAverage(float[] a) {
+  float sum = 0;
+  for(float i : a) {
+    sum += i; 
+  }
+  return sum/ a.length;
+}
 
 float getScaledTemp(int y, int m) {
   return getTempToScreen(temprature[y][m]);
@@ -111,6 +139,10 @@ float getScaledTemp(int y, int m) {
 
 float getTempToScreen(float temp){
   return screenHeight-50-(temp-minTemp)*scale;
+}
+
+float getTempYToScreen(float temp){
+  return screenHeight-50-(temp-minTempY)*scaleY;
 }
 
 void draw_temperaturebar(){  
@@ -129,7 +161,7 @@ void draw_temperaturebar(){
 }
 
 color getColorPerTemp(float temp){
-  float inter = map(temp, maxTemp, minTemp, 0, 1);
+  float inter = map(temp, maxTempY, minTempY, 0, 1);
   return lerpColor(c1, c2, inter);
 }
 
@@ -137,7 +169,7 @@ void draw_temperaturebar_skala(){
   textSize(18);
   fill(#000000);
   text("C°",1390,30);
-  text(maxTemp,1390,getTempToScreen(maxTemp));
-  text("0",1390,getTempToScreen(0));
-  text(minTemp,1390,getTempToScreen(minTemp));
+  text(maxTemp,1390,getTempYToScreen(maxTempY));
+  text("0",1390,getTempYToScreen(0));
+  text(minTemp,1390,getTempYToScreen(minTempY));
 }
