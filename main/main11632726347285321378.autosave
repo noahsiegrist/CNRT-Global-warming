@@ -21,7 +21,7 @@ void setup() {
   size(1500, 800);
   frameRate(60);
   
-  table = loadTable("data/jungfrau.csv", "header");
+  table = loadTable("data/zuerich.csv", "header");
   println(table.getRowCount() + " total rows in table");
   
   temprature = new float[table.getRowCount()/12+1][12];
@@ -112,20 +112,14 @@ void drawChart(){
   for(int i = 0; temprature.length > i; i++) {
     stroke(getColorPerTemp(aveYearly[i]));
     for(int j = 0; 11 > j; j++){
-      if(temprature[i][j] == temprature[i][j+1] && temprature[i][j] == 0){
-        return;
-      }
       
       line(j*100+100, getScaledTemp(i, j), j*100+200, getScaledTemp(i, j+1));
       y++;
       if(step < y){
         step++;
-        textSize(24);
-        fill(#0f26d2);
         text(firstYear+i,10,20);
         return;
       }
-      
     }
   }
   
@@ -175,7 +169,7 @@ void draw_temperaturebar_skala(){
   textSize(18);
   fill(#000000);
   text("C°",1390,30);
-  text(maxTemp,1390,getTempYToScreen(maxTempY));
+  text(maxTempY,1390,getTempYToScreen(maxTempY));
   text("0",1390,getTempYToScreen(0));
-  text(minTemp,1390,getTempYToScreen(minTempY));
+  text(minTempY,1390,getTempYToScreen(minTempY));
 }
